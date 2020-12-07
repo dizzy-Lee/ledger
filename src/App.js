@@ -4,9 +4,10 @@
  * @Description: 
  */
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PriceList from './components/PriceList';
+import ViewTab from './components/ViewTab';
+import { LIST_VIEW, CHART_VIEW } from './utility';
 
 const items = [
   {
@@ -20,7 +21,7 @@ const items = [
       "type": "outcome",
       "iconName": "ios-plane"
     }
-  },{
+  }, {
     "id": 2,
     "title": "打架斗殴",
     "price": 1000,
@@ -35,17 +36,44 @@ const items = [
 ]
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: LIST_VIEW
+    }
+    this.handleChangeView = this.handleChangeView.bind(this)
+  }
+
+  handleChangeView(view) {
+    switch (view) {
+      case 'list':
+        this.setState({
+          view: LIST_VIEW
+        })
+        break;
+      case 'chart':
+        this.setState({
+          view: CHART_VIEW
+        })
+        break;
+    
+      default:
+        break;
+    }
+  }
+
   render() {
-    return(
+    
+    return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header> */}
+        <ViewTab
+          activeTab={this.state.view}
+          onTabChange={(view) => {this.handleChangeView(view)}}
+        ></ViewTab>
         <PriceList
           items={items}
-          onModifyItem={(item) => {alert(item.id)}}
-          onDeleteItem={(item) => {alert('delete' + item.id)}}
+          onModifyItem={(item) => { alert(item.id) }}
+          onDeleteItem={(item) => { alert('delete' + item.id) }}
         />
       </div>
     )

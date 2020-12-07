@@ -1,10 +1,11 @@
 /*
  * @Author: LiYifan
  * @Date: 2020-12-07 15:05:31
- * @Description: 
+ * @Description: PriceList Component
  */
 import React from 'react';
 import Ionicon from 'react-ionicons';
+import propTypes from 'prop-types';
 
 const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
   return (
@@ -56,6 +57,16 @@ const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
       }
     </ul>
   )
+}
+
+PriceList.propTypes = {
+  items: propTypes.array.isRequired,
+  onModifyItem: propTypes.func.isRequired,
+  onDeleteItem: propTypes.func.isRequired
+}
+
+PriceList.defaultProps = {
+  onModifyItem: () => {}
 }
 
 export default PriceList;
