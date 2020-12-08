@@ -1,8 +1,3 @@
-/*
- * @Author: LiYifan
- * @Date: 2020-12-03 19:43:45
- * @Description: 
- */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';

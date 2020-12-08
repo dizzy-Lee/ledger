@@ -1,11 +1,7 @@
-/*
- * @Author: LiYifan
- * @Date: 2020-12-07 14:20:26
- * @Description: 
- */
 import React, { Component } from 'react';
 import './App.css';
 import PriceList from './components/PriceList';
+import TotalPrice from './components/TotalPrice';
 import ViewTab from './components/ViewTab';
 import { LIST_VIEW, CHART_VIEW } from './utility';
 
@@ -66,6 +62,7 @@ class App extends Component {
     
     return (
       <div className="App">
+        <TotalPrice income={1000} outcome={20000} />
         <ViewTab
           activeTab={this.state.view}
           onTabChange={(view) => {this.handleChangeView(view)}}

@@ -1,9 +1,3 @@
-/*
- * @Author: LiYifan
- * @Date: 2020-12-07 19:24:51
- * @Description: ViewTab component
- */
-
 import React from 'react';
 import Ionicon from 'react-ionicons';
 import PropTypes from 'prop-types';
