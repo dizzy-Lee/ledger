@@ -1,8 +1,3 @@
-/*
- * @Author: LiYifan
- * @Date: 2020-12-07 15:05:31
- * @Description: PriceList Component
- */
 import React from 'react';
 import Ionicon from 'react-ionicons';
 import propTypes from 'prop-types';

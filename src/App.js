@@ -3,6 +3,7 @@ import './App.css';
 import PriceList from './components/PriceList';
 import TotalPrice from './components/TotalPrice';
 import ViewTab from './components/ViewTab';
+import MonthPicker from './components/MonthPicker';
 import { LIST_VIEW, CHART_VIEW } from './utility';
 
 const items = [
@@ -63,6 +64,11 @@ class App extends Component {
     return (
       <div className="App">
         <TotalPrice income={1000} outcome={20000} />
+        <MonthPicker
+          year={2020}
+          month={2}
+          onChange={(year, month) => console.log(year, month)}
+        />
         <ViewTab
           activeTab={this.state.view}
           onTabChange={(view) => {this.handleChangeView(view)}}
